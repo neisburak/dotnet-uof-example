@@ -1,4 +1,4 @@
-using Core.Domain.Abstract;
+using Domain.Abstract;
 
 namespace Domain.Entities;
 

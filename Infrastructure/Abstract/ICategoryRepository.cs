@@ -1,4 +1,3 @@
-using Core.Infrastructure;
 using Domain.Entities;
 
 namespace Infrastructure.Abstract;

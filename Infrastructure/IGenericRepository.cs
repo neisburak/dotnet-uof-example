@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
-using Core.Domain.Abstract;
+using Domain.Abstract;
 
-namespace Core.Infrastructure;
+namespace Infrastructure;
 
 public interface IGenericRepository<TEntity> : IGenericRepository<TEntity, int> where TEntity : class, IEntity, new() { }
 

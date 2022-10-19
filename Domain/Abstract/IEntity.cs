@@ -1,4 +1,4 @@
-namespace Core.Domain.Abstract;
+namespace Domain.Abstract;
 
 public interface IEntity : IEntity<int> { }
 

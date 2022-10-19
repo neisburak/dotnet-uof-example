@@ -1,4 +1,4 @@
-using Core.Domain.Abstract;
+using Domain.Abstract;
 
 namespace Domain.Entities;
 
@@ -11,6 +11,6 @@ public class Product : IEntity
     public int UnitsInStock { get; set; }
     public decimal UnitPrice { get; set; }
 
-    public virtual Category Category { get; set; } = default!;
+    public virtual Category? Category { get; set; } = default!;
     public virtual ICollection<ProductFeature> Features { get; set; } = new HashSet<ProductFeature>();
 }

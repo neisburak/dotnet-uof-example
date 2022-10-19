@@ -15,9 +15,6 @@ public class DataContext : DbContext
     {
         modelBuilder.Entity<Product>().Property(p => p.UnitPrice).HasPrecision(18, 2);
 
-        modelBuilder.Entity<Category>().HasMany(p => p.Children).WithOne(p => p.Parent).HasForeignKey(p => p.ParentId);
-        modelBuilder.Entity<Product>().HasMany(p => p.Features).WithOne(p => p.Product).HasForeignKey(p => p.ProductId);
-
         base.OnModelCreating(modelBuilder);
     }
 }
