@@ -18,62 +18,62 @@ public abstract class GenericRepository<TEntity, TKey> : IGenericRepository<TEnt
         _context = context ?? throw new ArgumentNullException(nameof(DbContext));
     }
 
-    public TEntity? Get(TKey id)
+    public virtual TEntity? Get(TKey id)
     {
         return _context.Set<TEntity>().Find(id);
     }
 
-    public async Task<TEntity?> GetAsync(TKey id, CancellationToken cancellationToken)
+    public virtual async Task<TEntity?> GetAsync(TKey id, CancellationToken cancellationToken)
     {
         return await _context.Set<TEntity>().FindAsync(new object[] { id! }, cancellationToken);
     }
 
-    public TEntity? Get(Expression<Func<TEntity, bool>> predicate)
+    public virtual TEntity? Get(Expression<Func<TEntity, bool>> predicate)
     {
         return _context.Set<TEntity>().AsNoTracking().FirstOrDefault(predicate);
     }
 
-    public async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+    public virtual async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
         return await _context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(predicate, cancellationToken);
     }
 
-    public List<TEntity> GetWhere(Expression<Func<TEntity, bool>> predicate)
+    public virtual List<TEntity> GetWhere(Expression<Func<TEntity, bool>> predicate)
     {
         return _context.Set<TEntity>().AsNoTracking().Where(predicate).ToList();
     }
 
-    public async Task<List<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+    public virtual async Task<List<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
         return await _context.Set<TEntity>().AsNoTracking().Where(predicate).ToListAsync(cancellationToken);
     }
 
-    public void Add(TEntity entity)
+    public virtual void Add(TEntity entity)
     {
         _context.Set<TEntity>().Add(entity);
     }
 
-    public async Task AddAsync(TEntity entity, CancellationToken cancellationToken)
+    public virtual async Task AddAsync(TEntity entity, CancellationToken cancellationToken)
     {
         await _context.Set<TEntity>().AddAsync(entity, cancellationToken);
     }
 
-    public void Update(TEntity entity)
+    public virtual void Update(TEntity entity)
     {
         _context.Set<TEntity>().Update(entity);
     }
 
-    public void Delete(TEntity entity)
+    public virtual void Delete(TEntity entity)
     {
         _context.Set<TEntity>().Remove(entity);
     }
 
-    public int Count(Expression<Func<TEntity, bool>> predicate)
+    public virtual int Count(Expression<Func<TEntity, bool>> predicate)
     {
         return _context.Set<TEntity>().Count(predicate);
     }
 
-    public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+    public virtual async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
         return await _context.Set<TEntity>().CountAsync(predicate, cancellationToken);
     }

@@ -9,7 +9,7 @@ public class Category : IEntity
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
 
-    public virtual Category? Parent { get; set; } = default!;
+    public virtual Category Parent { get; set; } = default!;
     public virtual ICollection<Category> Children { get; set; } = new HashSet<Category>();
     public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
 }
