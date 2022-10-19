@@ -2,6 +2,6 @@ namespace Core.Infrastructure;
 
 public interface IUnitOfWork
 {
-    void SaveChanges();
-    Task SaveChangesAsync();
+    int SaveChanges();
+    Task<int> SaveChangesAsync();
 }

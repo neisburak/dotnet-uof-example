@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace Infrastructure.Abstract;
 
-public interface IProductFeatureRepository : IRepository<ProductFeature>
+public interface IProductFeatureRepository : IGenericRepository<ProductFeature>
 {
 
 }

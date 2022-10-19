@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace Infrastructure.Abstract;
 
-public interface ICategoryRepository : IRepository<Category>
+public interface ICategoryRepository : IGenericRepository<Category>
 {
 
 }
