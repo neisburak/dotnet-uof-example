@@ -1,6 +1,6 @@
-using Entities.Abstract;
+using Core.Domain.Abstract;
 
-namespace Entities.Concrete;
+namespace Domain.Entities;
 
 public class Product : IEntity
 {

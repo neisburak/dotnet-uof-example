@@ -1,11 +1,11 @@
-using Entities.Abstract;
+using Core.Domain.Abstract;
 
-namespace Entities.Concrete;
+namespace Domain.Entities;
 
 public class Category : IEntity
 {
     public int Id { get; set; }
-    public int ParentId { get; set; }
+    public int? ParentId { get; set; }
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
 
